@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/vincentsimard/votebrah/issues"
   },
-  "homepage": "https://github.com/vincentsimard/votebrah#readme"
+  "homepage": "https://github.com/vincentsimard/votebrah#readme",
+  "dependencies": {
+    "tmi.js": "1.2.1"
+  }
 }
