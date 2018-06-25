@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/vincentsimard/votebrah#readme",
   "dependencies": {
+    "nconf": "0.10.0",
     "tmi.js": "1.2.1"
   }
 }

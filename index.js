@@ -1,7 +1,12 @@
 const tmi = require('tmi.js');
-const haikudos = require('haikudos');
+const nconf = require('nconf');
 
 const commandPrefix = '!';
+const config = nconf
+  .argv()
+  .env()
+  .file({ file: 'config.json' })
+  .get();
 const opts = {
   identity: {
     username: '<BOT USERNAME>',
@@ -33,13 +38,7 @@ function sendMessage (target, context, message) {
   }
 }
 
-const client = new tmi.client(opts);
 
-client.on('message', onMessageHandler);
-client.on('connected', onConnectedHandler);
-client.on('disconnected', onDisconnectedHandler);
-
-client.connect();
 
 function onMessageHandler (target, context, msg, self) {
   // Ignore messages from the bot
@@ -73,6 +72,19 @@ function onConnectedHandler (addr, port) {
 }
 
 function onDisconnectedHandler (reason) {
-  console.log(`Womp womp, disconnected: ${reason}`);
+  console.log(`* Disconnected ${reason}`);
   process.exit(1);
 }
+
+
+
+const client = new tmi.client(config);
+
+client.on('message', onMessageHandler);
+client.on('connected', onConnectedHandler);
+client.on('disconnected', onDisconnectedHandler);
+
+console.log('* Connecting to Twitch');
+client.connect()
+  .then(data => {}) // data returns [server, port]
+  .catch(console.error);
