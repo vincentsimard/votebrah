@@ -1,0 +1,19 @@
+{
+  "name": "votebrah",
+  "version": "1.0.0",
+  "description": "Twitch bot that collects votes on broadcasted games outcome",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vincentsimard/votebrah.git"
+  },
+  "author": "Vincent Simard",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vincentsimard/votebrah/issues"
+  },
+  "homepage": "https://github.com/vincentsimard/votebrah#readme"
+}
